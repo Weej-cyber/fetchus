@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FetchUs Pet Care - Dog Walking, Pet Sitting & Boarding Services | 646.801.8402</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional pet care services including dog walking, pet sitting, and boarding. Licensed, insured, and pet first aid certified. We love them like you do. Call 646.801.8402">
+    <meta name="keywords" content="pet care, dog walking, pet sitting, pet boarding, dog sitter, pet care services, professional pet care, licensed pet care, insured pet sitter, Nancy Ortiz, Nancy Ortiz pet care, Bayonne pet care, Bayonne dog walking">
+    <meta name="author" content="Nancy Ortiz - FetchUs Pet Care">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FetchUs Pet Care - We ❤ them like you do">
+    <meta property="og:description" content="Professional, loving pet care services. Licensed, insured, and pet first aid certified.">
+    <meta property="og:image" content="images/fetchus-logo.png">
+    <meta property="og:url" content="https://www.fetchuspetcare.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FetchUs Pet Care - Professional Pet Care Services">
+    <meta name="twitter:description" content="Dog walking, pet sitting, and boarding services. Licensed and insured.">
+    <meta name="twitter:image" content="images/fetchus-logo.png">
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "FetchUs Pet Care",
+        "image": "images/fetchus-logo.png",
+        "telephone": "646-801-8402",
+        "priceRange": "$",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bayonne",
+            "addressRegion": "NJ",
+            "addressCountry": "US"
+        },
+        "description": "Professional pet care services including dog walking, pet sitting, and boarding. Licensed, insured, and pet first aid certified.",
+        "slogan": "We love them like you do",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Pet Care Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Dog Walking",
+                        "description": "Daily walks to keep your dog healthy and happy"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Pet Sitting",
+                        "description": "In-home care and companionship while you're away"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Pet Boarding",
+                        "description": "Daily walks to keep your dog healthy and happy"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Fredoka', sans-serif;
+            color: #333;
+        }
+        
+        header {
+            background: #f9f9f9;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            width: 220px;
+            height: auto;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #666;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #e74c3c;
+        }
+        
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+        
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slideshow-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .dot.active {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero {
+            background: #f9f9f9;
+            padding: 80px 50px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 .heart {
+            color: #e74c3c;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            background: #e74c3c;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #c0392b;
+        }
+        
+        .story-section {
+            background: #7d6b9f;
+            padding: 60px 50px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .story-content {
+            flex: 1;
+            color: white;
+        }
+        
+        .story-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .story-content p {
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        .credentials {
+            background: rgba(255,255,255,0.95);
+            padding: 30px;
+            border-radius: 10px;
+            min-width: 300px;
+        }
+        
+        .credentials h3 {
+            color: #e74c3c;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .credentials ul {
+            list-style: none;
+        }
+        
+        .credentials li {
+            padding: 10px 0;
+            color: #333;
+            font-size: 16px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .credentials li:before {
+            content: "•";
+            color: #e74c3c;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+        }
+        
+        .services-section {
+            background: #f9f9f9;
+            padding: 60px 50px;
+        }
+        
+        .services-section h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .service-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo {
+                width: 150px;
+            }
+            
+            nav {
+                gap: 20px;
+                font-size: 14px;
+            }
+            
+            .slideshow {
+                height: 300px;
+            }
+            
+            .hero {
+                padding: 50px 25px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+            
+            .story-section {
+                flex-direction: column;
+                padding: 40px 25px;
+            }
+            
+            .story-content h2 {
+                font-size: 28px;
+            }
+            
+            .story-content p {
+                font-size: 15px;
+            }
+            
+            .credentials {
+                min-width: 100%;
+            }
+            
+            .services-section {
+                padding: 40px 25px;
+            }
+            
+            .services-section h2 {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/fetchus-logo.png" alt="FetchUs Pet Care Logo" class="logo">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="#menu">☰</a>
+        </nav>
+    </header>
+    
+    <section class="slideshow" id="slideshow">
+        <div class="slide active">
+            <img src="images/slide1.jpg" alt="Happy dog getting care">
+        </div>
+        <div class="slide">
+            <img src="images/slide2.jpg" alt="Dog walking service">
+        </div>
+        <div class="slide">
+            <img src="images/slide3.jpg" alt="Pet sitting">
+        </div>
+        <div class="slide">
+            <img src="images/slide4.jpg" alt="Dog playing">
+        </div>
+        <div class="slide">
+            <img src="images/slide5.jpg" alt="Pet care professional">
+        </div>
+        <div class="slideshow-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </section>
+    
+    <section class="hero">
+        <h1>We <span class="heart">❤</span> them like you do</h1>
+        <p>Our professional team provides loving, personalized care for your furry friends, ensuring they are happy, healthy, and safe.</p>
+        <button class="cta-button">Get Started</button>
+    </section>
+    
+    <section class="story-section">
+        <div class="story-content">
+            <h2>Our Story</h2>
+            <p>I believe that every creature—big or small—is a blessing meant to be cherished. As a mother of four and grandmother of six, I've learned that love multiplies when you share it, which is why my heart naturally expanded to include several special needs rescue pets who needed extra care and patience.</p>
+        </div>
+        <div class="credentials">
+            <h3>Our Credentials</h3>
+            <ul>
+                <li>Licensed and insured</li>
+                <li>Pet first aid certified</li>
+                <li>Experienced handlers</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="services-section">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🐾</div>
+                <h3>Dog Walking</h3>
+                <p>Daily walks to keep your dog healthy and happy.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Pet Sitting</h3>
+                <p>In-home care and companionship while you're away</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏨</div>
+                <h3>Pet Boarding</h3>
+                <p>Daily walks to keep your dog healthy and happy.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let slideIndex = 0;
+        let slideTimer;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const slideshow = document.getElementById('slideshow');
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slideIndex = n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(slideIndex + 1);
+        }
+        
+        function currentSlide(n) {
+            clearInterval(slideTimer);
+            showSlide(n);
+            startSlideshow();
+        }
+        
+        function startSlideshow() {
+            slideTimer = setInterval(nextSlide, 5000);
+        }
+        
+        // Pause on hover
+        slideshow.addEventListener('mouseenter', () => {
+            clearInterval(slideTimer);
+        });
+        
+        slideshow.addEventListener('mouseleave', () => {
+            startSlideshow();
+        });
+        
+        // Start the slideshow
+        startSlideshow();
+    </script>
+</body>
+</html>
